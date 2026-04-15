@@ -1,0 +1,116 @@
+{
+  "code": "603986.SH",
+  "name": "兆易创新",
+  "data_date": "2026-04-13",
+  "industry": "半导体/集成电路设计",
+  "sub_sectors": ["存储芯片", "微控制器MCU", "传感器", "模拟芯片"],
+  "market_position": {
+    "nor_flash": {
+      "global_rank": 2,
+      "china_rank": 1,
+      "cumulative_shipments": "310亿颗",
+      "note": "全球第二，中国第一"
+    },
+    "mcu": {
+      "china_brand_rank": 1,
+      "architecture": "ARM Cortex-M系列 + RISC-V",
+      "series_count": "74个系列",
+      "models": "800+款型号",
+      "cumulative_shipments": "25亿颗",
+      "global_32bit_mcu_rank": 7
+    }
+  },
+  "product_lines": {
+    "nor_flash": {
+      "process_node": "55nm（全系列量产）",
+      "automotive_grade": "AEC-Q100认证",
+      "capacity_range": "2Mb-2Gb",
+      "applications": ["消费电子", "工业", "汽车电子", "物联网", "通信"]
+    },
+    "slc_nand_flash": {
+      "process_nodes": ["38nm", "24nm"],
+      "capacity_range": "1Gb-8Gb",
+      "note": "2025年价格受益于供给收缩显著上涨"
+    },
+    "dram": {
+      "products": ["DDR4", "DDR3L"],
+      "partner": "长鑫科技（CXMT）",
+      "strategic_stake": "1.88%",
+      "note": "长鑫科技2025年12月交表科创板IPO"
+    },
+    "custom_storage": {
+      "subsidiary": "青耘科技",
+      "status_2025": "部分项目进入客户送样、小批量试产",
+      "expected_2026": "进入量产阶段",
+      "target_clients": ["高通", "Intel", "字节跳动"],
+      "applications": ["手机", "AIPC", "端侧AI设备", "智能汽车机器人"]
+    },
+    "mcu": {
+      "cores": ["ARM Cortex-M3", "M4", "M23", "M33", "M7", "RISC-V"],
+      "applications": ["工业控制", "消费电子", "汽车电子", "电机控制", "3D打印"]
+    },
+    "sensor": {
+      "products": ["触控芯片", "指纹识别芯片"],
+      "flagship_application": "智能手机旗舰/高中端"
+    }
+  },
+  "industry_cycle": {
+    "nand_flash": {
+      "q4_2025_global_revenue": "211.7亿美元（季增23.8%）",
+      "q1_2026_contract_price_increase": "55%-60%",
+      "q2_2026_contract_price_forecast": "70%-75%",
+      "supply_constriction": "三星、铠侠等削减2D NAND产能，转向AI SSD/HBM"
+    },
+    "mcu": {
+      "price_cycle": "2025年处于周期底部",
+      "inventory_level": "已降至较低水平",
+      "competitive_environment": "本土厂商价格战激烈",
+      "note": "中微半导2026年1月宣布涨价15-50%"
+    }
+  },
+  "ai_drivers": {
+    "storage": {
+      "edge_ai_devices": "NOR Flash低功耗优势显著",
+      "ai_wearable": "AI眼镜、AI耳机、机器人新品类",
+      "custom_dram": "高速率、低功耗，端侧AI设备必备"
+    },
+    "mcu": {
+      "edge_ai": "轻量化AI模型适配MCU",
+      "applications": ["智能工厂", "安防", "电机控制", "智能汽车"]
+    }
+  },
+  "hong_kong_ipo": {
+    "status": "2026年1月13日挂牌（03986.HK）",
+    "issue_price_range": "132-162港元/股",
+    "shares_issued": "2891.5万股",
+    "proceeds_hkd": "至多46.8亿港元",
+    "基石投资者: [
+      "云峰基金", "CPE源峰", "景林资产", "小米集团", "OPPO创始人陈明永", "TCL", "泰康人寿"
+    ],
+    "基石认购额: "约3亿美元",
+    "funds_usage": {
+      "研发能力": "40%",
+      "战略并购投资": "35%",
+      "全球营销网络/海外布局": "9%"
+    }
+  },
+  "strategic_partnerships": {
+    "changxin_cxmt": {
+      "relationship": "战略合作伙伴 + 1.88%股东",
+      "cxmt_chairman": "朱一明（兆易创新董事长兼任）",
+      "dram_production": "长鑫科技为兆易DRAM代工"
+    },
+    "saifanzhou_70pct": {
+      "acquisition": "2024年收购苏州赛芯70%股权",
+      "product": "锂电池保护芯片龙头"
+    }
+  },
+  "sources": [
+    "第一上海 2026-01-05 公司评论",
+    "腾讯新闻 2026-04-09 NAND Flash量价齐升报道",
+    "东方财富 决策穹顶扫描报告 2026-01-16",
+    "华金证券 兆易创新深度分析PDF",
+    "东莞证券 年报点评 2026",
+    "雪球 大摩研报汇总"
+  ]
+}

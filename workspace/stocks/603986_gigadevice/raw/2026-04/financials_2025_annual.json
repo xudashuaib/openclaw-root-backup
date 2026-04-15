@@ -1,0 +1,63 @@
+{
+  "code": "603986.SH",
+  "name": "兆易创新",
+  "year": 2025,
+  "report_date": "2026-03-30",
+  "revenue_billion_cny": 92.03,
+  "revenue_growth_yoy_pct": 25.12,
+  "net_profit_billion_cny": 16.48,
+  "net_profit_growth_yoy_pct": 49.47,
+  "eps_cny": 2.48,
+  "dividend_per_10shares": 7.5,
+  "gross_margin_pct": 50.84,
+  "net_margin_pct": 16.77,
+  "roic_pct": 18.72,
+  "revenue_per_share_cny": 0.25,
+  "operating_cash_flow_million_cny": 389.35,
+  "business_breakdown": {
+    "storage_chips": {
+      "revenue_yoy_pct": 26.41,
+      "note": "NOR Flash稳健增长；利基型DRAM及SLC NAND Flash受益于供给紧缩+价格上涨"
+    },
+    "microcontroller_mcu": {
+      "revenue_billion_cny": 23.72,
+      "revenue_yoy_pct": 39.0
+    },
+    "sensors": {
+      "revenue_billion_cny": 5.65,
+      "revenue_yoy_pct": 108.85
+    }
+  },
+  "historical_financials": {
+    "2023": {
+      "revenue_billion_cny": 68.32,
+      "net_profit_billion_cny": 4.30,
+      "gross_margin_pct": 37.34,
+      "net_margin_pct": 1.61,
+      "eps_cny": null
+    },
+    "2024": {
+      "revenue_billion_cny": 73.56,
+      "net_profit_billion_cny": 11.01,
+      "gross_margin_pct": 41.48,
+      "net_margin_pct": 11.01,
+      "eps_cny": 1.66
+    },
+    "2025": {
+      "revenue_billion_cny": 92.03,
+      "net_profit_billion_cny": 16.48,
+      "gross_margin_pct": 50.84,
+      "net_margin_pct": 16.77,
+      "eps_cny": 2.48
+    }
+  },
+  "2026_analyst_consensus": {
+    "revenue_billion_cny": 27.12,
+    "eps_cny": 4.07
+  },
+  "sources": [
+    "证券时报 2026-03-30 年报披露 https://www.stcn.com/article/detail/3711157.html",
+    "兆易创新2025年度业绩预增公告（2026-01-23）",
+    "证券之星分析师预测"
+  ]
+}

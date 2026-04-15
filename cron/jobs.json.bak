@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "be7d5aa1-1a10-4cbc-ace4-059ea19b47ac",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "兆易创新早盘预测",
+      "enabled": true,
+      "createdAtMs": 1776136024765,
+      "updatedAtMs": 1776260817463,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请执行兆易创新(603986)早盘预测任务：\n1) 首先执行 `bash ~/.openclaw/workspace/scripts/is_trading_day.sh` 检查今日是否为交易日，如非交易日则回复\"今日非A股交易日，跳过早盘预测\"并结束任务；\n2) 读取 tracking/daily_prediction.json 了解当前状态；\n3) 通过腾讯财经API获取最新股价数据（开盘价、昨收价、成交量等）；\n4) 获取隔夜外围市场数据（纳指、费城半导体指数）；\n5) 按照15个维度(基本面/估值/行业面/资金面/技术面等)生成早盘预测报告；\n6) 更新 tracking/daily_prediction.json 的 am_session.prediction；\n7) 输出完整早盘预测报告（含方向/区间/概率分布/关键价位）。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02",
+        "channel": "feishu"
+      },
+      "state": {
+        "nextRunAtMs": 1776301200000,
+        "lastRunAtMs": 1776260586542,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 230921,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "6f06e0b0-aa42-4280-8d04-8dcbf5f2d053",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "兆易创新午盘复盘+下午预测",
+      "enabled": true,
+      "createdAtMs": 1776136024789,
+      "updatedAtMs": 1776260992370,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请执行兆易创新(603986)午盘复盘与下午预测任务：\n1) 首先执行 `bash ~/.openclaw/workspace/scripts/is_trading_day.sh` 检查今日是否为交易日，如非交易日则回复\"今日非A股交易日，跳过午盘复盘\"并结束任务；\n2) 读取 tracking/daily_prediction.json 的 am_session.prediction 内容；\n3) 通过腾讯财经API获取上午最新行情（开盘价、11:30收盘价、涨跌幅、成交量）；\n4) 对比早盘预测与实际走势，评估预测准确度；\n5) 生成午盘复盘报告（实际vs预测偏差分析）；\n6) 生成下午走势预测（含方向/区间/概率分布）；\n7) 更新 tracking/daily_prediction.json 的 am_session.review 和 pm_session.prediction。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02",
+        "channel": "feishu"
+      },
+      "state": {
+        "nextRunAtMs": 1776312000000,
+        "lastRunAtMs": 1776260817463,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 174907,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/stocks/603986_gigadevice/tracking/daily_prediction.json failed",
+        "lastDeliveryError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/stocks/603986_gigadevice/tracking/daily_prediction.json failed"
+      }
+    },
+    {
+      "id": "90651347-0291-4e77-91df-f7d04350f196",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "兆易创新尾盘复盘",
+      "enabled": true,
+      "createdAtMs": 1776136024809,
+      "updatedAtMs": 1776261286827,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请执行兆易创新(603986)尾盘复盘任务：\n1) 首先执行 `bash ~/.openclaw/workspace/scripts/is_trading_day.sh` 检查今日是否为交易日，如非交易日则回复\"今日非A股交易日，跳过尾盘复盘\"并结束任务；\n2) 读取 tracking/daily_prediction.json 的 pm_session.prediction 内容；\n3) 通过腾讯财经API获取下午最新行情（15:00收盘价、涨跌幅、全日成交量）；\n4) 对比下午预测与实际走势，评估预测准确度；\n5) 生成尾盘复盘报告（含全天走势总结、准确率统计、经验教训）；\n6) 更新 tracking/daily_prediction.json 的 pm_session.review；\n7) 更新 tracking/daily_price.json 全日行情数据；\n8) 统计并更新 overall accuracy_rate；\n9) **【K线深度分析】通过腾讯财经API获取兆易创新近60个交易日的日K线数据（含日期/开盘/收盘/最高/最低/成交量）；分析内容：MACD指标（金叉/死叉/背离）、RSI指标（超买/超卖）、KDJ指标、均线系统（5/10/20/60日均线走势与排列）、支撑压力位（当日及历史关键价位）、成交量分析（放量/缩量对比）**；\n10) 将K线分析结果追加到当日复盘报告中输出。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02",
+        "channel": "feishu"
+      },
+      "state": {
+        "nextRunAtMs": 1776322800000,
+        "lastRunAtMs": 1776260992370,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 294457,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "74793d3b-3de4-4651-a1b3-dacf72c40994",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "每日工作区自动备份",
+      "description": "每天A股收盘后(16:05)自动备份工作区到GitHub",
+      "enabled": true,
+      "createdAtMs": 1776271080529,
+      "updatedAtMs": 1776271080529,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 16 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd ~/.openclaw/workspace && git add -A && git commit -m 'Auto backup $(date +%Y-%m-%d_%H:%M)' && git push origin main",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02",
+        "channel": "feishu"
+      },
+      "state": {
+        "nextRunAtMs": 1776326700000
+      }
+    }
+  ]
+}

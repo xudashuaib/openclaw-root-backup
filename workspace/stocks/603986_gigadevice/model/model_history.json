@@ -1,0 +1,20 @@
+{
+  "model_name": "兆易创新(603986)分析模型",
+  "current_version": "v1.0",
+  "versions": [
+    {
+      "version": "v1.0",
+      "date": "2026-04-13",
+      "dimension_count": 15,
+      "dimensions": [
+        "D1基本面", "D2估值", "D3行业面", "D4主营业务",
+        "D5竞争壁垒", "D6商业模式", "D7管理层", "D8资金面",
+        "D9技术面", "D10事件驱动", "D11外部风险", "D12产业链",
+        "D13市场情绪", "D14长期趋势", "D15风险监控"
+      ],
+      "scoring_method": "百分制加权",
+      "changes_from_previous": "初始版本",
+      "notes": "参考a-stock-fundamental-screening + china-stock-analysis框架构建"
+    }
+  ]
+}

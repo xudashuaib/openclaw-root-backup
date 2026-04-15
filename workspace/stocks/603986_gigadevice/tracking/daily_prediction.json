@@ -1,0 +1,67 @@
+{
+  "date": "2026-04-16",
+  "weekday": "星期四",
+  "market": "A股早盘预测",
+  "am_session": {
+    "status": "predicted",
+    "prediction": {
+      "direction": "超跌反弹修复，272是关键多空分界",
+      "expected_range": "272 ~ 282",
+      "most_likely": "275~280震荡偏强",
+      "probability_distribution": {
+        "强势反弹 280~285": 25,
+        "震荡偏强 275~280": 35,
+        "震荡整理 272~277": 30,
+        "偏弱下探 268~272": 8,
+        "极端跌破 <268": 2
+      },
+      "key_factors": [
+        "📊 昨收274.00，272连续两天验证为强支撑",
+        "📊 纳指+1.04%强势，科技板块情绪偏多",
+        "📊 苹果+2.29%、英伟达+1.49%，芯片股普涨",
+        "⚠️ 道指-0.50%回调，整体市场有所分化",
+        "📊 285-287主力派发区已套牢，5日均线279.8下移",
+        "📊 昨尾盘274企稳，多空暂时平衡",
+        "📊 272为关键多空转换点"
+      ],
+      "support_levels": ["272.0(强支撑)", "270.0", "268-269(5日均线)", "265.0"],
+      "resistance_levels": ["274-275(整数)", "277-278(20日均线)", "279.8(5日均线)", "280-282(缺口区)"],
+      "volume_expectation": "40~60万手（正常量能）",
+      "note": "超跌反弹修复行情，272支撑有效性决定方向。隔夜纳指强势对A股半导体有积极暗示。"
+    },
+    "review": null,
+    "scenario_analysis": {
+      "bullish_25": "强势反弹280~285：纳指带动+科技回暖，突破5日均线279.8",
+      "base_35": "震荡偏强275~280：272~274支撑有效，275~277为压力，震荡反弹",
+      "neutral_30": "震荡整理272~277：272支撑确认，窄幅整理",
+      "bearish_8": "偏弱下探268~272：272失守，5日均线压制",
+      "extreme_2": "跌破<268：黑天鹅，趋势反转"
+    },
+    "report_file": "reports/2026/603986_早盘预测_20260416_AM.md",
+    "updated_at": "2026-04-16T09:00:00+08:00"
+  },
+  "pm_session": {
+    "status": "pending",
+    "prediction": null,
+    "review": null
+  },
+  "key_levels": {
+    "support": ["272.0(强支撑连续验证)", "270.0(整数)", "268-269(5日均线)", "265.0(10日均线)"],
+    "resistance": ["274-275(整数+昨收)", "277-278(20日均线)", "279.8(5日均线)", "280-282(缺口区)"]
+  },
+  "data_source": {
+    "price": "Tencent Finance API (qt.gtimg.cn)",
+    "us_market": "Tencent Finance API (美股)",
+    "kline_5min": "Sina Finance API (money.finance.sina.com.cn)"
+  },
+  "overall_accuracy_rate": null,
+  "last_updated": "2026-04-16T09:00:00+08:00",
+  "history": {
+    "2026-04-15": {
+      "am_score": 9,
+      "pm_score": 9.5,
+      "accuracy_pct": 91.7,
+      "total_predictions": 2
+    }
+  }
+}

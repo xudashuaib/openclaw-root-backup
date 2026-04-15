@@ -1,0 +1,129 @@
+{
+  "providers": {
+    "codex": {
+      "baseUrl": "https://chatgpt.com/backend-api/v1",
+      "auth": "token",
+      "api": "openai-codex-responses",
+      "models": [
+        {
+          "id": "gpt-5.4",
+          "name": "gpt-5.4",
+          "api": "openai-codex-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "gpt-5.4-mini",
+          "name": "GPT-5.4-Mini",
+          "api": "openai-codex-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "gpt-5.2",
+          "name": "gpt-5.2",
+          "api": "openai-codex-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsUsageInStreaming": true
+          }
+        }
+      ]
+    },
+    "minimax": {
+      "baseUrl": "https://api.minimaxi.com/anthropic/v1",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072,
+          "api": "anthropic-messages"
+        }
+      ],
+      "apiKey": "sk-cp-1P6GzMr5JC0fkyYmy6WU-4lZN_UFZQQtd9YwxVLKoGXyuKm0lc2WgYahB7dsHWCFxFUJjdMWy2JDYt9KjyIu67fWmj9uhJCIwdBtu9LAuAd9fxLNpVXn-ZA"
+    },
+    "minimax-cn": {
+      "baseUrl": "https://api.minimaxi.com/anthropic/v1",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.7",
+          "name": "MiniMax M2.7",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072,
+          "api": "anthropic-messages"
+        }
+      ],
+      "apiKey": "sk-cp-1P6GzMr5JC0fkyYmy6WU-4lZN_UFZQQtd9YwxVLKoGXyuKm0lc2WgYahB7dsHWCFxFUJjdMWy2JDYt9KjyIu67fWmj9uhJCIwdBtu9LAuAd9fxLNpVXn-ZA"
+    }
+  }
+}

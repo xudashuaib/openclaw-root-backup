@@ -1,0 +1,105 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace",
+      "models": {
+        "minimax/MiniMax-M2.7": {
+          "alias": "Minimax"
+        },
+        "minimax/MiniMax-M2.7-highspeed": {}
+      },
+      "model": {
+        "primary": "minimax/MiniMax-M2.7-highspeed"
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "ebcd408d4911376b750bf2b09e86124b140b69bb95362c9a"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.06,
+              "cacheWrite": 0.375
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          }
+        ],
+        "api": "anthropic-messages",
+        "authHeader": true
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "minimax:cn": {
+        "provider": "minimax",
+        "mode": "api_key"
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a9564b2f93b41cde",
+      "appSecret": "DaRukllGNQNRoowBVh5F1cPL6ZgkoHgH",
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "ou_451d71ab5382024db03f3a5c37dcde02"
+      ],
+      "groupPolicy": "allowlist"
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.12",
+    "lastTouchedAt": "2026-04-13T14:27:18.219Z"
+  }
+}

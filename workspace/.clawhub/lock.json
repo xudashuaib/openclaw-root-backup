@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "skills": {
+    "skill-security-audit-v2": {
+      "version": "1.0.0",
+      "installedAt": 1776091924079
+    },
+    "china-stock-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1776092402588
+    },
+    "a-stock-fundamental-screening": {
+      "version": "1.0.0",
+      "installedAt": 1776093062766
+    },
+    "mental-models": {
+      "version": "1.0.0",
+      "installedAt": 1776093847557
+    },
+    "business-model-canvas": {
+      "version": "0.1.0",
+      "installedAt": 1776094137248
+    },
+    "porters-five-forces": {
+      "version": "1.0.0",
+      "installedAt": 1776094254361
+    },
+    "swot-analysis": {
+      "version": "1.0.0",
+      "installedAt": 1776094296276
+    },
+    "mbb-strategist": {
+      "version": "1.0.0",
+      "installedAt": 1776094337427
+    },
+    "unit-economics": {
+      "version": "0.1.0",
+      "installedAt": 1776094387817
+    },
+    "economics": {
+      "version": "1.0.0",
+      "installedAt": 1776094429721
+    },
+    "markdown-converter": {
+      "version": "1.0.0",
+      "installedAt": 1776094472234
+    },
+    "pdf-extract": {
+      "version": "1.0.0",
+      "installedAt": 1776094513834
+    },
+    "document-pro": {
+      "version": "1.0.0",
+      "installedAt": 1776094595693
+    },
+    "science": {
+      "version": "1.0.0",
+      "installedAt": 1776094724670
+    },
+    "in-depth-research": {
+      "version": "1.0.0",
+      "installedAt": 1776094765601
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1776095180044
+    },
+    "allstock-data": {
+      "version": "1.0.2",
+      "installedAt": 1776098815677
+    },
+    "stock-market-pro": {
+      "version": "1.2.12",
+      "installedAt": 1776099148041
+    },
+    "self-improving": {
+      "version": "1.2.16",
+      "installedAt": 1776099158757
+    },
+    "finclaw": {
+      "version": "1.0.0",
+      "installedAt": 1776099181940
+    },
+    "eodhd-apis": {
+      "version": "1.0.2",
+      "installedAt": 1776099259448
+    },
+    "yumstock": {
+      "version": "1.0.0",
+      "installedAt": 1776099273706
+    },
+    "yahooclaw": {
+      "version": "0.1.7",
+      "installedAt": 1776099275561
+    },
+    "chartclass": {
+      "version": "0.0.2",
+      "installedAt": 1776099363667
+    },
+    "quant-analyst": {
+      "version": "0.1.1",
+      "installedAt": 1776099316442
+    },
+    "data-analysis": {
+      "version": "1.0.2",
+      "installedAt": 1776099327254
+    },
+    "deep-research-pro": {
+      "version": "1.0.2",
+      "installedAt": 1776099327400
+    },
+    "trading-knowledge": {
+      "version": "1.0.0",
+      "installedAt": 1776099363825
+    },
+    "agent-browser-clawdbot": {
+      "version": "0.1.0",
+      "installedAt": 1776154361609
+    },
+    "summarize-pro": {
+      "version": "1.0.0",
+      "installedAt": 1776154361755
+    },
+    "openclaw-find-skills": {
+      "version": "1.0.0",
+      "installedAt": 1776154417642
+    },
+    "skill-creator": {
+      "version": "0.1.0",
+      "installedAt": 1776154418342
+    }
+  }
+}

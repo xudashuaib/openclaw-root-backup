@@ -1,0 +1,165 @@
+{
+  "code": "603986.SH",
+  "code_sh": "sh603986",
+  "name": "兆易创新",
+  "exchange": "SSE",
+  "entries": [
+    {
+      "date": "2026-04-16",
+      "weekday": "星期四",
+      "market": "A股预测日",
+      "status": "pending",
+      "open": null,
+      "high": null,
+      "low": null,
+      "close": null,
+      "close_yesterday": 274.00,
+      "change_pct": null,
+      "change_abs": null,
+      "volume_hand": null,
+      "amount_yi": null,
+      "northbound_flow_yi": null,
+      "margin_balance_yi": null,
+      "ws_change": null,
+      "event": "早盘预测：超跌反弹修复，272是关键多空分界",
+      "us_nasdaq": {
+        "date": "2026-04-15",
+        "close": 23885.50,
+        "change_pct": 1.04,
+        "note": "纳指强势上涨，科技板块普涨"
+      },
+      "us_sox": {
+        "date": "2026-04-15",
+        "close": null,
+        "change_pct": null,
+        "note": "数据暂缺"
+      },
+      "kline_5min": "待开盘后更新",
+      "pm_session": {
+        "pm_open_1300": null,
+        "pm_low_1345": null,
+        "pm_high_1445": null,
+        "pm_close_1500": null,
+        "pm_change_pct": null,
+        "pm_change_abs": null,
+        "pm_volume_hand": null,
+        "pm_amount_yi": null,
+        "pm_note": "待午盘更新"
+      },
+      "updated_at": "2026-04-16T09:00:00+08:00",
+      "note": "早盘预测：超跌反弹修复行情，272支撑有效性决定方向"
+    },
+    {
+      "date": "2026-04-15",
+      "weekday": "星期三",
+      "market": "A股",
+      "status": "已收盘",
+      "open": 285.00,
+      "high": 287.65,
+      "low": 271.98,
+      "close": 274.00,
+      "close_yesterday": 280.01,
+      "change_pct": -2.15,
+      "change_abs": -6.01,
+      "volume_hand": 396973,
+      "amount_yi": 110.72,
+      "northbound_flow_yi": null,
+      "margin_balance_yi": 116.56,
+      "ws_change": null,
+      "event": "高开低走，-2.15%（-6.01元），回踩5日线，量能萎缩至39.7万手",
+      "us_nasdaq": {
+        "date": "2026-04-14",
+        "close": null,
+        "change_pct": null,
+        "note": "美股今日休市（复活节）"
+      },
+      "us_sox": {
+        "date": "2026-04-14",
+        "close": null,
+        "change_pct": null,
+        "note": "美股今日休市（复活节）"
+      },
+      "kline_5min": "9:30开285.00→10:00见高287.65→10:30快速下杀271.98→14:00反弹至278→15:00收274.00",
+      "pm_session": {
+        "pm_open_1300": 272.50,
+        "pm_low_1315": 272.00,
+        "pm_low_1345": 271.98,
+        "pm_high_1430": 273.93,
+        "pm_close_1500": 274.00,
+        "pm_change_pct": -0.56,
+        "pm_change_abs": -1.54,
+        "pm_volume_hand": 196000,
+        "pm_amount_yi": 53.76,
+        "pm_note": "弱势震荡，272区域反复拉锯，尾盘拉回274，多空暂时平衡"
+      },
+      "updated_at": "2026-04-15T21:49:00+08:00",
+      "note": "高开低走，尾盘收274，多空暂时平衡"
+
+    },
+    {
+      "date": "2026-04-14",
+      "weekday": "星期二",
+      "market": "A股",
+      "status": "已收盘",
+      "open": 269.50,
+      "high": 281.23,
+      "low": 266.39,
+      "close": 280.01,
+      "close_yesterday": 262.14,
+      "change_pct": 6.82,
+      "change_abs": 17.87,
+      "volume_hand": 466205,
+      "amount_yi": 128.61,
+      "northbound_flow_yi": null,
+      "margin_balance_yi": 93.68,
+      "ws_change": null,
+      "event": "全天大涨+6.82%（+17.87元），深V反转+尾盘强势，创本轮反弹新高281.23",
+      "us_nasdaq": {
+        "date": "2026-04-13",
+        "close": 23183.74,
+        "change_pct": 1.23,
+        "note": "纳斯达克9连涨！创历史新高"
+      },
+      "us_sox": {
+        "date": "2026-04-13",
+        "close": 9039.5,
+        "change_pct": 1.68,
+        "note": "费城半导体指数连续第二日创历史新高"
+      },
+      "kline_5min": "9:30开269.50→低266.39→10:40见高278.88→11:30收277.77→13:00开277.77→14:00突破278.88→15:00收280.01(全天高281.23)",
+      "pm_session": {
+        "pm_open_1300": 277.77,
+        "pm_low_1345": 276.5,
+        "pm_high_1445": 281.23,
+        "pm_close_1500": 280.01,
+        "pm_change_pct": 0.81,
+        "pm_change_abs": 2.24,
+        "pm_volume_hand": 170579,
+        "pm_amount_yi": 47.77,
+        "pm_note": "缩量整理后14:00放量突破早盘高点，尾盘高位强势震荡"
+      },
+      "updated_at": "2026-04-14T15:05:00+08:00"
+    },
+    {
+      "date": "2026-04-11",
+      "weekday": "星期五",
+      "market": "A股",
+      "status": "已收盘",
+      "open": 255.49,
+      "high": 268.32,
+      "low": 255.24,
+      "close": 265.09,
+      "change_pct": 5.83,
+      "change_abs": 14.60,
+      "volume_hand": 534767,
+      "amount_yi": null,
+      "northbound_flow_yi": null,
+      "margin_balance_yi": null,
+      "ws_change": null,
+      "event": "大买盘异动，主力净流入16.24亿元",
+      "updated_at": "2026-04-13T00:00:00+08:00"
+    }
+  ],
+  "last_updated_source": "Tencent Finance API (qt.gtimg.cn)",
+  "last_updated_at": "2026-04-15T21:49:00+08:00"
+}
