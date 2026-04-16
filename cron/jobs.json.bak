@@ -112,11 +112,11 @@
       "id": "74793d3b-3de4-4651-a1b3-dacf72c40994",
       "agentId": "main",
       "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
-      "name": "每日工作区自动备份",
-      "description": "每天A股收盘后(16:05)自动备份工作区到GitHub",
+      "name": "每日OpenClaw完整备份",
+      "description": "每天A股收盘后(16:05)自动备份完整OpenClaw配置到GitHub(openclaw-root-backup)",
       "enabled": true,
       "createdAtMs": 1776271080529,
-      "updatedAtMs": 1776271080529,
+      "updatedAtMs": 1776273889152,
       "schedule": {
         "kind": "cron",
         "expr": "5 16 * * 1-5",
@@ -126,8 +126,8 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "cd ~/.openclaw/workspace && git add -A && git commit -m 'Auto backup $(date +%Y-%m-%d_%H:%M)' && git push origin main",
-        "timeoutSeconds": 60
+        "message": "rsync -av --exclude='logs/' --exclude='.git/' --exclude='.discovery/' ~/.openclaw/ ~/.openclaw-backup/ && git -C ~/.openclaw-backup add -A && git -C ~/.openclaw-backup commit -m 'Full backup $(date +%Y-%m-%d_%H:%M)' && git -C ~/.openclaw-backup push origin main",
+        "timeoutSeconds": 120
       },
       "delivery": {
         "mode": "announce",

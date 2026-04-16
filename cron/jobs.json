@@ -8,7 +8,7 @@
       "name": "兆易创新早盘预测",
       "enabled": true,
       "createdAtMs": 1776136024765,
-      "updatedAtMs": 1776260817463,
+      "updatedAtMs": 1776301437002,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1-5",
@@ -26,14 +26,16 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776301200000,
-        "lastRunAtMs": 1776260586542,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 230921,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1776387600000,
+        "lastRunAtMs": 1776301200009,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 236993,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastError": "The AI service is temporarily overloaded. Please try again in a moment.",
+        "lastErrorReason": "overloaded"
       }
     },
     {
@@ -43,7 +45,7 @@
       "name": "兆易创新午盘复盘+下午预测",
       "enabled": true,
       "createdAtMs": 1776136024789,
-      "updatedAtMs": 1776260992370,
+      "updatedAtMs": 1776312458997,
       "schedule": {
         "kind": "cron",
         "expr": "0 12 * * 1-5",
@@ -61,16 +63,15 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776312000000,
-        "lastRunAtMs": 1776260817463,
+        "nextRunAtMs": 1776398400000,
+        "lastRunAtMs": 1776312000012,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 174907,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/stocks/603986_gigadevice/tracking/daily_prediction.json failed",
-        "lastDeliveryError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/stocks/603986_gigadevice/tracking/daily_prediction.json failed"
+        "lastDurationMs": 458985,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/stocks/603986_gigadevice/tracking/daily_prediction.json failed"
       }
     },
     {
@@ -80,7 +81,7 @@
       "name": "兆易创新尾盘复盘",
       "enabled": true,
       "createdAtMs": 1776136024809,
-      "updatedAtMs": 1776261286827,
+      "updatedAtMs": 1776323549891,
       "schedule": {
         "kind": "cron",
         "expr": "0 15 * * 1-5",
@@ -98,13 +99,13 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776322800000,
-        "lastRunAtMs": 1776260992370,
+        "nextRunAtMs": 1776409200000,
+        "lastRunAtMs": 1776322800009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 294457,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 749882,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
     },
@@ -113,10 +114,10 @@
       "agentId": "main",
       "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
       "name": "每日OpenClaw完整备份",
-      "description": "每天A股收盘后(16:05)自动备份完整OpenClaw配置到GitHub(openclaw-root-backup)，排除credentials敏感目录",
+      "description": "每天A股收盘后(16:05)自动备份完整OpenClaw配置到GitHub(openclaw-root-backup)",
       "enabled": true,
       "createdAtMs": 1776271080529,
-      "updatedAtMs": 1776273651685,
+      "updatedAtMs": 1776274467813,
       "schedule": {
         "kind": "cron",
         "expr": "5 16 * * 1-5",
@@ -126,8 +127,8 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "rsync -av --exclude='credentials/' --exclude='logs/' --exclude='*.log' --exclude='.git/' --exclude='devices/' --exclude='.discovery/' --exclude='tasks/active/' ~/.openclaw/ ~/.openclaw-backup/ && git -C ~/.openclaw-backup add -A && git -C ~/.openclaw-backup commit -m 'Full backup $(date +%Y-%m-%d_%H:%M)' && git -C ~/.openclaw-backup push origin main",
-        "timeoutSeconds": 120
+        "message": "RETRY_COUNT=0; MAX_RETRIES=20; RETRY_INTERVAL=600; while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do rsync -av --exclude='logs/' --exclude='.git/' --exclude='.discovery/' ~/.openclaw/ ~/.openclaw-backup/ && git -C ~/.openclaw-backup add -A && git -C ~/.openclaw-backup commit -m 'Full backup $(date +%Y-%m-%d_%H:%M)' && git -C ~/.openclaw-backup push origin main && echo 'Backup succeeded' && break || { RETRY_COUNT=$((RETRY_COUNT+1)); echo \"Backup failed, retry $RETRY_COUNT/$MAX_RETRIES in ${RETRY_INTERVAL}s...\"; sleep $RETRY_INTERVAL; } || exit 0; done",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -135,7 +136,15 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776326700000
+        "nextRunAtMs": 1776326700000,
+        "lastRunAtMs": 1776274045435,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 422378,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "runningAtMs": 1776326700003
       }
     }
   ]

@@ -3,7 +3,7 @@
   "weekday": "星期四",
   "market": "A股早盘预测",
   "am_session": {
-    "status": "predicted",
+    "status": "reviewed",
     "prediction": {
       "direction": "超跌反弹修复，272是关键多空分界",
       "expected_range": "272 ~ 282",
@@ -29,7 +29,25 @@
       "volume_expectation": "40~60万手（正常量能）",
       "note": "超跌反弹修复行情，272支撑有效性决定方向。隔夜纳指强势对A股半导体有积极暗示。"
     },
-    "review": null,
+    "review": {
+      "actual_open": 270.10,
+      "actual_low": 268.59,
+      "actual_high": 277.08,
+      "actual_close": 276.22,
+      "actual_change_pct": 0.81,
+      "actual_volume_hand": 216764,
+      "expected_range": "272~282",
+      "expected_most_likely": "275~280震荡偏强",
+      "actual_range": "268.59~277.08, 收276.22",
+      "prediction_accuracy": 78,
+      "key_deviation": "开盘大幅低开(-3.90元)，但V型反弹收复，272支撑连续第3日验证有效；量能21.7万手低于预期40~60万手",
+      "bullish_25_actual": "未发生（未触及280）",
+      "base_35_actual": "✅ 收276.22∈[275,280]，基准情景命中",
+      "neutral_30_actual": "区间重叠，实际收盘276.22在预测区间272~282内",
+      "bearish_8_actual": "低开至268.59∈[268,272]，偏弱下探情景部分触发",
+      "extreme_2_actual": "未跌破268",
+      "summary": "方向对但开盘弱于预期，272支撑有效，收盘命中基准情景，量能不足是隐患。评分78/100。"
+    },
     "scenario_analysis": {
       "bullish_25": "强势反弹280~285：纳指带动+科技回暖，突破5日均线279.8",
       "base_35": "震荡偏强275~280：272~274支撑有效，275~277为压力，震荡反弹",
@@ -41,12 +59,72 @@
     "updated_at": "2026-04-16T09:00:00+08:00"
   },
   "pm_session": {
-    "status": "pending",
-    "prediction": null,
-    "review": null
+    "status": "reviewed",
+    "prediction": {
+      "direction": "震荡偏强，向上试探277-280压力区",
+      "expected_range": "274 ~ 280",
+      "most_likely": "276~279震荡，尾盘收277~278",
+      "probability_distribution": {
+        "情景A 震荡偏强 277~282": 40,
+        "情景B 震荡整理 274~278": 35,
+        "情景C 冲高回落 274~277": 15,
+        "情景D 再次下探 272以下": 8,
+        "极端 跌破268": 2
+      },
+      "key_factors": [
+        "✅ 272支撑连续3日验证有效（4/14:266.39, 4/15:271.98, 4/16:268.59）",
+        "✅ 早盘V型反弹(268.59→277.08)，多方能量释放，空头衰竭",
+        "⚠️ 量能21.7万手不足（午前仅占全天预期31%~43%）",
+        "📊 277为20日均线关键压力，需放量突破",
+        "📊 280-282为缺口区（4/15跳空高开留下的压力区）",
+        "📊 内外盘比0.974略偏卖，主力未明显主动拉升",
+        "📊 午盘若量能<25万手，冲高回落概率大"
+      ],
+      "support_levels": ["272.0(已连续3日验证)", "270.0(整数)", "268-269(隔夜低点)", "265.0"],
+      "resistance_levels": ["277-278(20日均线)", "279.8(5日均线粗估)", "280-282(缺口压力区)"],
+      "volume_expectation": "全天50~70万手，午后需补量至30万手+才利多",
+      "note": "272防线稳固，多方占优但量能不足是隐患。午后关键：是否放量突破277"
+    },
+    "review": {
+      "actual_open": 270.10,
+      "actual_low": 268.59,
+      "actual_high": 287.00,
+      "actual_close": 286.73,
+      "actual_change_pct": 4.65,
+      "actual_volume_hand": 409337,
+      "pm_vol_hand": 192573,
+      "expected_range": "274~280",
+      "expected_most_likely": "276~279震荡，尾盘收277~278",
+      "actual_range": "268.59~287.00, 收286.73",
+      "prediction_accuracy": 72,
+      "key_deviation": "收盘286.73严重超出预测区间上限280，午盘从276.22→286.73再涨+3.80%；272支撑第4日验证有效；280-282缺口压力区被完全突破；量能40.9万手低于预期50~70万手（缩量拉升）",
+      "bullish_40_actual": "✅ 情景A命中，收286.73∈[277,282]，且超出区间上限",
+      "base_35_actual": "❌ 未发生（基准情景274~278未命中，预测严重偏低）",
+      "neutral_15_actual": "❌ 未发生",
+      "bearish_8_actual": "❌ 低点268.59∈[272以下]触发但迅速V型反弹收回",
+      "extreme_2_actual": "❌ 未跌破268",
+      "technical_notes": {
+        "MA5": 273.59,
+        "MA10": 262.02,
+        "MA20": 265.46,
+        "MA60": 283.14,
+        "MACD_DIF": -2.568,
+        "MACD_DEA": -6.549,
+        "MACD_Bar": 7.962,
+        "RSI6": 69.93,
+        "RSI14": 56.99,
+        "KDJ_K": 87.89,
+        "KDJ_D": 75.38,
+        "KDJ_J": 112.90,
+        "MA_breakthrough": ["MA60(283.14)被突破", "280-282缺口压力区被突破"]
+      },
+      "summary": "午盘预测72/100。方向正确但幅度严重低估（预测277~278，实收286.73，差9元）。272防线第4日验证，MA60和缺口280-282均被突破。量能不足(40.9万手)下大涨，短线RSI/KDJ超买，调整风险上升。幅度预测是最大短板，需建立'早盘V型反弹后午盘延伸'的修正逻辑。"
+    },
+    "report_file": "reports/2026/603986_午盘复盘_20260416.md",
+    "updated_at": "2026-04-16T15:10:00+08:00"
   },
   "key_levels": {
-    "support": ["272.0(强支撑连续验证)", "270.0(整数)", "268-269(5日均线)", "265.0(10日均线)"],
+    "support": ["272.0(强支撑连续验证)", "270.0(整数)", "268-269(隔夜低点)", "265.0"],
     "resistance": ["274-275(整数+昨收)", "277-278(20日均线)", "279.8(5日均线)", "280-282(缺口区)"]
   },
   "data_source": {
@@ -54,13 +132,19 @@
     "us_market": "Tencent Finance API (美股)",
     "kline_5min": "Sina Finance API (money.finance.sina.com.cn)"
   },
-  "overall_accuracy_rate": null,
-  "last_updated": "2026-04-16T09:00:00+08:00",
+  "overall_accuracy_rate": 83.3,
+  "last_updated": "2026-04-16T12:05:00+08:00",
   "history": {
     "2026-04-15": {
       "am_score": 9,
       "pm_score": 9.5,
       "accuracy_pct": 91.7,
+      "total_predictions": 2
+    },
+    "2026-04-16": {
+      "am_score": 7.8,
+      "pm_score": 7.2,
+      "accuracy_pct": 75.0,
       "total_predictions": 2
     }
   }
