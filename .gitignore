@@ -1,1 +1,3 @@
-credentials/\nlogs/\n.discovery/
+agents/main/sessions/
+logs/
+.discovery/
