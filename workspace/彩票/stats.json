@@ -1,0 +1,12 @@
+{
+  "dlt": {
+    "cost": 0,
+    "win": 0,
+    "draws": 0
+  },
+  "ssq": {
+    "cost": 20,
+    "win": 0,
+    "draws": 1
+  }
+}

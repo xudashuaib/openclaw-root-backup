@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "vision-analysis": {
+      "source": "minimax-ai/skills",
+      "sourceType": "github",
+      "computedHash": "d8613867cf2abde3854f94432668c10a7c0c95f5c73be3ac73a70bfa1b74311e"
+    }
+  }
+}

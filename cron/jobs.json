@@ -8,10 +8,10 @@
       "name": "兆易创新早盘预测",
       "enabled": true,
       "createdAtMs": 1776136024765,
-      "updatedAtMs": 1776301437002,
+      "updatedAtMs": 1776648118712,
       "schedule": {
         "kind": "cron",
-        "expr": "0 9 * * 1-5",
+        "expr": "15 9 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
@@ -26,16 +26,14 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776387600000,
-        "lastRunAtMs": 1776301200009,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 236993,
+        "nextRunAtMs": 1776734100000,
+        "lastRunAtMs": 1776647700012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 418700,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "The AI service is temporarily overloaded. Please try again in a moment.",
-        "lastErrorReason": "overloaded"
+        "consecutiveErrors": 0
       }
     },
     {
@@ -45,10 +43,10 @@
       "name": "兆易创新午盘复盘+下午预测",
       "enabled": true,
       "createdAtMs": 1776136024789,
-      "updatedAtMs": 1776312458997,
+      "updatedAtMs": 1776658646272,
       "schedule": {
         "kind": "cron",
-        "expr": "0 12 * * 1-5",
+        "expr": "15 12 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
@@ -63,15 +61,14 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776398400000,
-        "lastRunAtMs": 1776312000012,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 458985,
+        "nextRunAtMs": 1776744900000,
+        "lastRunAtMs": 1776658500011,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 146261,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 2,
-        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/stocks/603986_gigadevice/tracking/daily_prediction.json failed"
+        "consecutiveErrors": 0
       }
     },
     {
@@ -81,10 +78,10 @@
       "name": "兆易创新尾盘复盘",
       "enabled": true,
       "createdAtMs": 1776136024809,
-      "updatedAtMs": 1776323549891,
+      "updatedAtMs": 1776669779543,
       "schedule": {
         "kind": "cron",
-        "expr": "0 15 * * 1-5",
+        "expr": "15 15 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
@@ -99,11 +96,11 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776409200000,
-        "lastRunAtMs": 1776322800009,
+        "nextRunAtMs": 1776755700000,
+        "lastRunAtMs": 1776669300008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 749882,
+        "lastDurationMs": 479535,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -117,10 +114,10 @@
       "description": "每天A股收盘后(16:05)自动备份完整OpenClaw配置到GitHub(openclaw-root-backup)",
       "enabled": true,
       "createdAtMs": 1776271080529,
-      "updatedAtMs": 1776274467813,
+      "updatedAtMs": 1776414022781,
       "schedule": {
         "kind": "cron",
-        "expr": "5 16 * * 1-5",
+        "expr": "20 16 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
@@ -136,15 +133,109 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776326700000,
-        "lastRunAtMs": 1776274045435,
+        "nextRunAtMs": 1776673200000,
+        "lastRunAtMs": 1776414000010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 422378,
+        "lastDurationMs": 22771,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "runningAtMs": 1776326700003
+        "runningAtMs": 1776673200005
+      }
+    },
+    {
+      "id": "3a8a0b18-5589-4999-b118-8b11c9b147ed",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "彩票预测号码生成",
+      "enabled": true,
+      "createdAtMs": 1776616300858,
+      "updatedAtMs": 1776660835127,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 12 * * 1,3,6",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行彩票预测号码生成任务，步骤如下：\n\nStep 1: 执行 `python3 ~/.openclaw/workspace/彩票/彩票预测.py`，记录完整输出\n\nStep 2: 直接将脚本输出中的\"大乐透：\"和\"双色球：\"两部分完整复制到飞书消息中（不改表格、不加emoji、不解释）\n\nStep 3: 将完整预测号码（脚本生成的6组大乐透+6组双色球）追加写入 ~/.openclaw/workspace/彩票/predict.md（格式与脚本输出一致）\n\n最后附上：\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02"
+      },
+      "state": {
+        "nextRunAtMs": 1776832200000,
+        "lastRunAtMs": 1776660799281,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 35846,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "f1b8eec7-6741-4bf7-aa61-dc7e065c9aed",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "大乐透开奖结果核对",
+      "enabled": true,
+      "createdAtMs": 1776617356574,
+      "updatedAtMs": 1776617363527,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 21 * * 1,3,6",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行大乐透开奖结果核对任务，每步都要输出状态：\n\n---执行步骤记录---\n\nStep 1: 搜索最新大乐透开奖号码\n- 通过搜索获取今日（最新一期）大乐透开奖结果\n- 搜索关键词：大乐透开奖结果 今日\n- 记录期号、开奖日期、开奖号码\n- 确认数据来源可靠\n\nStep 2: 更新大乐透.csv\n- 检查最新期号是否已在CSV中\n- 如果没有则追加新期号\n- 报告更新结果\n\nStep 3: 读取predict.md获取大乐透预测数据\n- 解析predict.md中的大乐透预测号码（6组）\n- 检查是否存在下注记录（用户是否实际购买）\n- 报告解析到的预测号码\n\nStep 4: 计算中奖金额\n- 如果有下注记录：使用下注记录计算中奖\n- 如果无下注记录：计算预测号码中奖情况\n- 输出每组号码的中奖结果\n- 更新累计统计（总投入、总中奖、收益率）\n\nStep 5: 输出最终结果\n- 包含：期号、开奖号码、各组预测号码中奖情况、累计统计\n- 格式清晰，便于阅读\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02"
+      },
+      "state": {
+        "nextRunAtMs": 1776691800000
+      }
+    },
+    {
+      "id": "e4668c58-30b4-41b7-b2e0-f7ee10627420",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:direct:ou_451d71ab5382024db03f3a5c37dcde02",
+      "name": "双色球开奖结果核对",
+      "enabled": true,
+      "createdAtMs": 1776617632135,
+      "updatedAtMs": 1776617632135,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 21 * * 0,2,4",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行双色球开奖结果核对任务，每步都要输出状态：\n\n---执行步骤记录---\n\nStep 1: 搜索最新双色球开奖号码\n- 通过搜索获取今日（最新一期）双色球开奖结果\n- 搜索关键词：双色球开奖结果 今日\n- 记录期号，开奖日期，开奖号码\n- 确认数据来源可靠\n\nStep 2: 更新双色球.csv\n- 检查最新期号是否已在CSV中\n- 如果没有则追加新期号\n- 报告更新结果\n\nStep 3: 读取predict.md获取双色球预测数据\n- 解析predict.md中的双色球预测号码（6组）\n- 检查是否存在下注记录（用户是否实际购买）\n- 报告解析到的预测号码\n\nStep 4: 计算中奖金额\n- 如果有下注记录：使用下注记录计算中奖\n- 如果无下注记录：计算预测号码中奖情况\n- 输出每组号码的中奖结果\n- 更新累计统计（总投入、总中奖、收益率）\n\nStep 5: 输出最终结果\n- 包含：期号，开奖号码、各组预测号码中奖情况、累计统计\n- 格式清晰，便于阅读\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "ou_451d71ab5382024db03f3a5c37dcde02"
+      },
+      "state": {
+        "nextRunAtMs": 1776777600000
       }
     }
   ]

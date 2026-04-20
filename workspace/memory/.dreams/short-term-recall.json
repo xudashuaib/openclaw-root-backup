@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-19T07:53:59.404Z",
+  "entries": {
+    "memory:memory/2026-04-19.md:1:31": {
+      "key": "memory:memory/2026-04-19.md:1:31",
+      "path": "memory/2026-04-19.md",
+      "startLine": 1,
+      "endLine": 31,
+      "source": "memory",
+      "snippet": "# 2026-04-19 Daily Memory ## 彩票系统搭建（今日完成） ### 最终方案 - **体彩大乐透**：每周一/三/六各买6注，每注3元（2元+1元追加），共18元/次 - **福彩双色球**：每周二/四、日各买6注，每注2元，共12元/次 - **预测号码**：2热+2冷+2随机，每注泾渭分明（全部来自同一池） - **输出格式**：简洁6组号码，不带表格，冷热随机等标记 ### 定时任务 | 任务 | Job ID | Cron | 时间 | |------|--------|------|------| | 预测号码生成 | `02e8d371...` | `30 12 * * 1,3,6` | 每周一/三/六 12:30 | | 大乐透开奖结果 | `4668ac32...` | `30 21 * * 1,3,6` | 每周一/三/六 21:30 | | 双色球开奖结果 | `5f151aa3...` | `20 21 * * 2,4,7` | 每周二/四/日 21:20 | ### 关键文件 - 预测脚本：`~/.openclaw/workspace/scripts/lottery_prediction.py` - 查结果脚本：`~/.openclaw/workspace/scripts/lottery_check_results.py` - 统计数据：`~/.openclaw/workspace/lottery/stats.json`（已清零） - 历史数据：`/tmp/ssq_17500.txt`（3438条）、`/tmp/dlt_d",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-19T07:53:59.404Z",
+      "lastRecalledAt": "2026-04-19T07:53:59.404Z",
+      "queryHashes": [
+        "4bae05f5e649"
+      ],
+      "recallDays": [
+        "2026-04-19"
+      ],
+      "conceptTags": [
+        "每周一/三/六各买6注",
+        "共18元/次",
+        "每周二/四",
+        "共12元/次",
+        "每周一/三/六",
+        "每周二/四/日",
+        "tmp/ssq-17500.txt",
+        "tmp/dlt-d"
+      ]
+    }
+  }
+}

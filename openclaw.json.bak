@@ -6,10 +6,10 @@
         "minimax/MiniMax-M2.7": {
           "alias": "Minimax"
         },
-        "minimax/MiniMax-M2.7-highspeed": {}
+        "custom-api-day77-icu/MiniMax-M2.7-highspeed": {}
       },
       "model": {
-        "primary": "minimax/MiniMax-M2.7"
+        "primary": "custom-api-day77-icu/MiniMax-M2.7-highspeed"
       }
     }
   },
@@ -79,6 +79,29 @@
         ],
         "api": "anthropic-messages",
         "authHeader": true
+      },
+      "custom-api-day77-icu": {
+        "baseUrl": "https://api.day77.icu/v1",
+        "api": "openai-completions",
+        "apiKey": "sk-9kXabyooTbP01vkNdDMe5fE1XWGGqoSALmmBKUcwbE19teiq",
+        "models": [
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax-M2.7-highspeed (Custom Provider)",
+            "contextWindow": 16000,
+            "maxTokens": 4096,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "reasoning": false
+          }
+        ]
       }
     }
   },
@@ -120,13 +143,28 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-13T14:28:41.421Z",
-    "lastRunVersion": "2026.4.12",
+    "lastRunAt": "2026-04-19T07:50:05.064Z",
+    "lastRunVersion": "2026.4.15",
     "lastRunCommand": "onboard",
     "lastRunMode": "local"
   },
+  "mcp": {
+    "servers": {
+      "MiniMax": {
+        "command": "uvx",
+        "args": [
+          "minimax-coding-plan-mcp",
+          "-y"
+        ],
+        "env": {
+          "MINIMAX_API_KEY": "sk-cp-1P6GzMr5JC0fkyYmy6WU-4lZN_UFZQQtd9YwxVLKoGXyuKm0lc2WgYahB7dsHWCFxFUJjdMWy2JDYt9KjyIu67fWmj9uhJCIwdBtu9LAuAd9fxLNpVXn-ZA",
+          "MINIMAX_API_HOST": "https://api.minimaxi.com"
+        }
+      }
+    }
+  },
   "meta": {
-    "lastTouchedVersion": "2026.4.12",
-    "lastTouchedAt": "2026-04-13T14:37:59.798Z"
+    "lastTouchedVersion": "2026.4.15",
+    "lastTouchedAt": "2026-04-19T08:33:14.543Z"
   }
 }

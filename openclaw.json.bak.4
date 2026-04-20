@@ -1,0 +1,171 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace",
+      "models": {
+        "minimax/MiniMax-M2.7": {
+          "alias": "Minimax"
+        },
+        "minimax/MiniMax-M2.7-highspeed": {},
+        "custom-api-day77-icu/MiniMax-M2.7-highspeed": {}
+      },
+      "model": {
+        "primary": "custom-api-day77-icu/MiniMax-M2.7-highspeed"
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "ebcd408d4911376b750bf2b09e86124b140b69bb95362c9a"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "provider": "tavily",
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.06,
+              "cacheWrite": 0.375
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          }
+        ],
+        "api": "anthropic-messages",
+        "authHeader": true
+      },
+      "custom-api-day77-icu": {
+        "baseUrl": "https://api.day77.icu/",
+        "api": "openai-completions",
+        "apiKey": "sk-9kXabyooTbP01vkNdDMe5fE1XWGGqoSALmmBKUcwbE19teiq",
+        "models": [
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax-M2.7-highspeed (Custom Provider)",
+            "contextWindow": 16000,
+            "maxTokens": 4096,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "reasoning": false
+          }
+        ]
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "minimax:cn": {
+        "provider": "minimax",
+        "mode": "api_key"
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a9564b2f93b41cde",
+      "appSecret": "DaRukllGNQNRoowBVh5F1cPL6ZgkoHgH",
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "ou_451d71ab5382024db03f3a5c37dcde02"
+      ],
+      "groupPolicy": "allowlist"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "tavily": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "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"
+          }
+        }
+      },
+      "minimax": {
+        "enabled": true
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-13T14:38:11.139Z",
+    "lastRunVersion": "2026.4.12",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "mcp": {
+    "servers": {
+      "MiniMax": {
+        "command": "uvx",
+        "args": [
+          "minimax-coding-plan-mcp",
+          "-y"
+        ],
+        "env": {
+          "MINIMAX_API_KEY": "sk-cp-1P6GzMr5JC0fkyYmy6WU-4lZN_UFZQQtd9YwxVLKoGXyuKm0lc2WgYahB7dsHWCFxFUJjdMWy2JDYt9KjyIu67fWmj9uhJCIwdBtu9LAuAd9fxLNpVXn-ZA",
+          "MINIMAX_API_HOST": "https://api.minimaxi.com"
+        }
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.12",
+    "lastTouchedAt": "2026-04-19T07:31:42.722Z"
+  }
+}

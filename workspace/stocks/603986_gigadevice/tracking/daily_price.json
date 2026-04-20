@@ -5,10 +5,212 @@
   "exchange": "SSE",
   "entries": [
     {
+      "date": "2026-04-20",
+      "weekday": "星期一",
+      "market": "A股尾盘复盘",
+      "status": "已收盘",
+      "open": 293.00,
+      "high": 295.96,
+      "low": 287.12,
+      "close": 290.54,
+      "close_yesterday": 288.96,
+      "change_pct": 0.55,
+      "change_abs": 1.58,
+      "volume_hand": 325643,
+      "amount_yi": 94.90,
+      "northbound_flow_yi": null,
+      "margin_balance_yi": 123.60,
+      "turnover_rate": 4.88,
+      "event": "全天倒N型：09:30开293.00→10:45冲高295.96→午盘前292.22→13:00开292.22→14:30加速下行289.00→15:00收290.54(+0.55%)，高位滞涨，RSI严重超买后技术修正",
+      "ws_change": 1.58,
+      "us_nasdaq": {
+        "date": "2026-04-17",
+        "close": 23639.69,
+        "change_pct": -0.06,
+        "note": "纳指微幅回调-0.06%（周四收盘），周五A股独自演绎"
+      },
+      "us_sox": {
+        "date": "2026-04-17",
+        "close": 9329.35,
+        "change_pct": 0.97,
+        "note": "SOX前一交易日+0.97%创历史高位"
+      },
+      "us_chip_stocks": {
+        "AMD": {
+          "close": 273.04,
+          "change_pct": 5.78,
+          "note": "AMD前一日暴涨+5.78%"
+        }
+      },
+      "technical_indicators": {
+        "MA5": 284.05,
+        "MA10": 270.36,
+        "MA20": 264.74,
+        "MA60": 284.33,
+        "MACD_DIF": 0.97,
+        "MACD_DEA": -4.02,
+        "MACD_Bar": 9.99,
+        "MACD_signal": "MACD金叉！DIF>0(0.97)且DIF>DEA(-4.02)，零轴上方运行，红柱延续(9.99)，近期由负转正，看多信号",
+        "RSI6": 85.1,
+        "RSI14": 76.9,
+        "RSI_signal": "RSI6严重超买(85.1)，RSI14超买(76.9)，高位钝化，技术修正压力加大",
+        "KDJ_K": 85.6,
+        "KDJ_D": 77.8,
+        "KDJ_J": 101.0,
+        "KDJ_signal": "KDJ高位钝化，J值101突破100极度超买区域"
+      },
+      "kline_shape": "全天倒N型：09:30开293→10:45冲高295.96→午盘前横盘292~293→13:00开292.22→14:30加速下探289.00→15:00收290.54，全天高低点差8.84元",
+      "am_session": {
+        "am_open_0930": 293.00,
+        "am_high_1045": 295.96,
+        "am_low_1000": 288.00,
+        "am_close_1130": 292.22,
+        "am_change_pct": 1.13,
+        "am_change_abs": 3.26,
+        "am_volume_hand": 231300,
+        "am_amount_yi": 67.57,
+        "am_note": "倒N型：开293→冲295.96→回288获支撑→午盘292横盘，竞价跳空+3.04元，RSI严重超买"
+      },
+      "pm_session": {
+        "pm_open_1300": 292.22,
+        "pm_high_1400": 292.87,
+        "pm_low_1430": 289.00,
+        "pm_close_1500": 290.54,
+        "pm_change_pct": -0.58,
+        "pm_change_abs": -1.68,
+        "pm_volume_hand": 94343,
+        "pm_amount_yi": 27.45,
+        "pm_note": "午盘低开后弱势震荡，14:30后加速下行，尾盘收290.54(-0.58%)，量能萎缩至9.4万手，多头无力反弹"
+      },
+      "kline_60d_analysis": {
+        "date_range": "2026-01-15 至 2026-04-20 (共61个交易日)",
+        "MA_system": {
+          "MA5": 284.05,
+          "MA10": 270.36,
+          "MA20": 264.74,
+          "MA60": 284.33,
+          "note": "MA5>MA10>MA20，MA5在MA10上方，多头排列，但MA60>MA5，短期超买"
+        },
+        "MACD": {
+          "DIF": 0.97,
+          "DEA": -4.02,
+          "Bar": 9.99,
+          "signal": "MACD金叉（零轴上方，DIF>0且DIF>DEA），近期由空转多，红柱持续放大，趋势转强信号"
+        },
+        "RSI": {
+          "RSI6": 85.1,
+          "RSI14": 76.9,
+          "signal": "RSI6严重超买(85.1)，RSI14超买(76.9)，均处于历史高位区，短期内技术回调风险大"
+        },
+        "KDJ": {
+          "K": 85.6,
+          "D": 77.8,
+          "J": 101.0,
+          "signal": "J值101突破100，高位钝化极度超买，KDJ三线均处于80以上强势区域，警惕回调"
+        },
+        "bollinger": {
+          "upper": 295.17,
+          "mid": 264.74,
+          "lower": 234.31,
+          "position": "中轨上方（收290.54，中轨264.74，上轨295.17）"
+        },
+        "ATR": {
+          "value": 13.82,
+          "range_68pct": "[276.72 ~ 304.36]"
+        },
+        "volume": {
+          "today_hand": 32.6,
+          "avg5_hand": 40.1,
+          "avg10_hand": 43.5,
+          "ratio_5d": 0.81,
+          "note": "平量偏缩（量比0.81），低于5日均量，全天量能萎缩，涨势乏力"
+        },
+        "key_levels": {
+          "today_support": ["289.00(午后低点)", "288.00(早盘低点/整数)", "286.00(心理)", "283.14(MA60)"],
+          "today_resistance": ["292.00(整数)", "295.96(早盘高点)", "296.96(布林上轨)", "298.00(心理)"],
+          "60d_high": 331.16,
+          "60d_low": 236.86,
+          "recent_high": "295.66 (04-17，当日早盘已突破)",
+          "recent_support": "288.00(今日低点), 286.73(昨收), 283.14(MA60)"
+        }
+      },
+      "updated_at": "2026-04-20T15:20:00+08:00"
+    },
+    {
+      "date": "2026-04-17",
+      "weekday": "星期五",
+      "market": "A股尾盘复盘",
+      "status": "已收盘",
+      "open": 284.00,
+      "high": 295.66,
+      "low": 282.90,
+      "close": 288.96,
+      "close_yesterday": 286.73,
+      "change_pct": 0.78,
+      "change_abs": 2.23,
+      "volume_hand": 406321,
+      "amount_yi": 117.68,
+      "northbound_flow_yi": null,
+      "margin_balance_yi": 122.93,
+      "turnover_rate": 6.08,
+      "event": "倒N型走势：低开V反冲高295.66后全天震荡走弱，尾盘收288.96(+0.78%)",
+      "ws_change": 2.23,
+      "us_nasdaq": {
+        "date": "2026-04-16",
+        "close": 23639.69,
+        "change_pct": -0.06,
+        "note": "纳指微幅回调-0.06%，整体平稳"
+      },
+      "us_sox": {
+        "date": "2026-04-16",
+        "close": 9329.35,
+        "change_pct": 0.97,
+        "note": "SOX大涨+0.97%创历史高位，芯片板块情绪积极"
+      },
+      "us_chip_stocks": {
+        "AMD": {
+          "close": 273.04,
+          "change_pct": 5.78,
+          "note": "AMD暴涨+5.78%"
+        },
+        "NVDA": {
+          "note": "产业链偏多（具体价格暂缺）"
+        }
+      },
+      "technical_indicators": {
+        "MA5": 278.37,
+        "MA10": 266.21,
+        "MA20": 264.72,
+        "MA60": 283.73,
+        "MACD_DIF": -1.753,
+        "MACD_DEA": -6.920,
+        "MACD_Bar": 10.334,
+        "MACD_signal": "红柱延续，DIF在零轴下方运行但差值收窄",
+        "RSI6": 84.1,
+        "RSI14": 63.0,
+        "RSI_signal": "RSI6超买区域(84.1)，RSI14偏强(63.0)",
+        "KDJ_K": 91.0,
+        "KDJ_D": 78.5,
+        "KDJ_J": 116.0,
+        "KDJ_signal": "高位钝化，J值116.0极度超买"
+      },
+      "kline_shape": "倒N型：09:30开284→09:42冲高295.66→10:30回落292→11:00~13:30震荡292~294→14:30加速下行→15:00收288.96",
+      "pm_session": {
+        "pm_open_1300": 292.87,
+        "pm_close_1500": 288.96,
+        "pm_change_pct": -1.33,
+        "pm_change_abs": -3.91,
+        "pm_volume_hand": 132450,
+        "pm_amount_yi": 38.49,
+        "pm_note": "午盘震荡走弱，292.87开盘后最高293.46，14:30后加速下行，尾盘288.96(-1.33%)，全天倒N型，高位滞涨明显"
+      },
+      "updated_at": "2026-04-17T15:20:00+08:00"
+    },
+    {
       "date": "2026-04-16",
       "weekday": "星期四",
-      "market": "A股预测日",
-      "status": "早盘已收盘",
+      "market": "A股",
+      "status": "已收盘",
       "open": 270.1,
       "high": 277.08,
       "low": 268.59,
@@ -16,7 +218,7 @@
       "close_yesterday": 274.0,
       "change_pct": 0.81,
       "change_abs": 2.22,
-      "volume_hand": 216764,
+      "volume_hand": 409337,
       "amount_yi": null,
       "northbound_flow_yi": null,
       "margin_balance_yi": null,
@@ -38,9 +240,9 @@
       "pm_session": {
         "pm_open_1300": 276.22,
         "pm_low_1345": 268.59,
-        "pm_high_1445": 287.00,
+        "pm_high_1445": 287.0,
         "pm_close_1500": 286.73,
-        "pm_change_pct": 3.80,
+        "pm_change_pct": 3.8,
         "pm_change_abs": 10.51,
         "pm_volume_hand": 192573,
         "pm_amount_yi": 55.12,
@@ -159,6 +361,6 @@
       "updated_at": "2026-04-13T00:00:00+08:00"
     }
   ],
-  "last_updated_source": "Tencent Finance API (qt.gtimg.cn)",
-  "last_updated_at": "2026-04-16T15:10:00+08:00"
+  "last_updated_source": "Tencent Finance API (qt.gtimg.cn) + Seekingalpha/MarketWatch",
+  "last_updated_at": "2026-04-17T15:20:00+08:00"
 }
