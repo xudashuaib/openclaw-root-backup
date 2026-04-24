@@ -1,12 +1,17 @@
 {
-  "dlt": {
-    "cost": 0,
-    "win": 0,
-    "draws": 0
+  "双色球": {
+    "cost": 44,
+    "win": 10,
+    "draws": 3
   },
-  "ssq": {
-    "cost": 20,
-    "win": 0,
-    "draws": 1
+  "大乐透": {
+    "cost": 36,
+    "win": 7,
+    "draws": 2
+  },
+  "总计": {
+    "cost": 80,
+    "win": 17,
+    "draws": 5
   }
 }

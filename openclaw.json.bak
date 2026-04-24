@@ -9,7 +9,8 @@
         "custom-api-day77-icu/MiniMax-M2.7-highspeed": {}
       },
       "model": {
-        "primary": "custom-api-day77-icu/MiniMax-M2.7-highspeed"
+        "primary": "minimax/MiniMax-M2.7",
+        "fallbacks": ["custom-api-day77-icu/MiniMax-M2.7-highspeed"]
       }
     }
   },
@@ -88,7 +89,7 @@
           {
             "id": "MiniMax-M2.7-highspeed",
             "name": "MiniMax-M2.7-highspeed (Custom Provider)",
-            "contextWindow": 16000,
+            "contextWindow": 300000,
             "maxTokens": 4096,
             "input": [
               "text"
@@ -143,7 +144,7 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-19T07:50:05.064Z",
+    "lastRunAt": "2026-04-19T08:33:31.046Z",
     "lastRunVersion": "2026.4.15",
     "lastRunCommand": "onboard",
     "lastRunMode": "local"
@@ -165,6 +166,6 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.15",
-    "lastTouchedAt": "2026-04-19T08:33:14.543Z"
+    "lastTouchedAt": "2026-04-19T08:33:31.251Z"
   }
 }

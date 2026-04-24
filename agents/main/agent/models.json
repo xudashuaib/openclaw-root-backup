@@ -84,8 +84,7 @@
           "name": "MiniMax M2.7",
           "reasoning": true,
           "input": [
-            "text",
-            "image"
+            "text"
           ],
           "cost": {
             "input": 0.3,
@@ -94,8 +93,23 @@
             "cacheWrite": 0.375
           },
           "contextWindow": 204800,
-          "maxTokens": 131072,
-          "api": "anthropic-messages"
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 2.4,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
         }
       ],
       "apiKey": "sk-cp-1P6GzMr5JC0fkyYmy6WU-4lZN_UFZQQtd9YwxVLKoGXyuKm0lc2WgYahB7dsHWCFxFUJjdMWy2JDYt9KjyIu67fWmj9uhJCIwdBtu9LAuAd9fxLNpVXn-ZA"
@@ -110,8 +124,7 @@
           "name": "MiniMax M2.7",
           "reasoning": true,
           "input": [
-            "text",
-            "image"
+            "text"
           ],
           "cost": {
             "input": 0.3,
@@ -120,8 +133,23 @@
             "cacheWrite": 0.375
           },
           "contextWindow": 204800,
-          "maxTokens": 131072,
-          "api": "anthropic-messages"
+          "maxTokens": 131072
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "name": "MiniMax M2.7 Highspeed",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 2.4,
+            "cacheRead": 0.06,
+            "cacheWrite": 0.375
+          },
+          "contextWindow": 204800,
+          "maxTokens": 131072
         }
       ],
       "apiKey": "sk-cp-1P6GzMr5JC0fkyYmy6WU-4lZN_UFZQQtd9YwxVLKoGXyuKm0lc2WgYahB7dsHWCFxFUJjdMWy2JDYt9KjyIu67fWmj9uhJCIwdBtu9LAuAd9fxLNpVXn-ZA"
@@ -169,6 +197,31 @@
             "cacheWrite": 0
           },
           "contextWindow": 16000,
+          "maxTokens": 4096,
+          "api": "openai-completions"
+        }
+      ]
+    },
+    "custom-api-day77-icu-vision": {
+      "baseUrl": "https://api.day77.icu/v1",
+      "apiKey": "sk-9kXabyooTbP01vkNdDMe5fE1XWGGqoSALmmBKUcwbE19teiq",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "MiniMax-Vision",
+          "name": "MiniMax-Vision (Custom Provider)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 300000,
           "maxTokens": 4096,
           "api": "openai-completions"
         }

@@ -5,9 +5,15 @@
   },
   "usageStats": {
     "minimax:cn": {
-      "errorCount": 0,
-      "lastUsed": 1776669777011,
-      "lastFailureAt": 1776646945698
+      "errorCount": 1,
+      "lastUsed": 1776787152396,
+      "lastFailureAt": 1776832364648,
+      "failureCounts": {
+        "rate_limit": 1
+      },
+      "cooldownUntil": 1776832394648,
+      "cooldownReason": "rate_limit",
+      "cooldownModel": "MiniMax-M2.7"
     }
   }
 }

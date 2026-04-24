@@ -8,7 +8,7 @@
       "name": "兆易创新早盘预测",
       "enabled": true,
       "createdAtMs": 1776136024765,
-      "updatedAtMs": 1776648118712,
+      "updatedAtMs": 1776993334860,
       "schedule": {
         "kind": "cron",
         "expr": "15 9 * * 1-5",
@@ -18,7 +18,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行兆易创新(603986)早盘预测任务：\n1) 首先执行 `bash ~/.openclaw/workspace/scripts/is_trading_day.sh` 检查今日是否为交易日，如非交易日则回复\"今日非A股交易日，跳过早盘预测\"并结束任务；\n2) 读取 tracking/daily_prediction.json 了解当前状态；\n3) 通过腾讯财经API获取最新股价数据（开盘价、昨收价、成交量等）；\n4) 获取隔夜外围市场数据（纳指、费城半导体指数）；\n5) 按照15个维度(基本面/估值/行业面/资金面/技术面等)生成早盘预测报告；\n6) 更新 tracking/daily_prediction.json 的 am_session.prediction；\n7) 输出完整早盘预测报告（含方向/区间/概率分布/关键价位）。"
+        "message": "你是一名拥有15年从业经验的资深证券分析师。请严格按以下步骤执行兆易创新(603986)早盘预测任务。\n\n【重试策略】如果任务执行过程中遇到任何API错误(400/429/500等)、网络超时、或模型返回错误，立即执行以下重试流程：等待30秒后重试，共最多重试3次。3次全部失败后才报告任务失败。\n\n---执行步骤---\n\nStep 1: 检查是否为交易日\nexecute: `bash ~/.openclaw/workspace/scripts/is_trading_day.sh`\n如果返回非交易日，立即回复「今日非A股交易日，跳过早盘预测」并结束任务。\n\nStep 2: 读取当前状态\nexecute: 读取 `tracking/daily_prediction.json` 了解当前状态\n\nStep 3: 获取实时行情数据\nexecute: 通过腾讯财经API获取兆易创新(603986)最新行情：开盘价、昨收价、最新价、涨跌幅、成交量\n\nStep 4: 获取隔夜外围市场\nexecute: 获取纳指(.IXIC)、费城半导体指数(SOX)、台积电ADR(TSM)隔夜数据\n\nStep 5: 生成15维度早盘预测报告\n按以下维度逐一分析：\n1) 基本面\n2) 估值\n3) 行业面\n4) 资金面\n5) 技术面-均线\n6) 技术面-RSI\n7) 技术面-MACD\n8) 技术面-布林带\n9) 技术面-ATR波动性\n10) 形态分析\n11) 心理/情绪\n12) 机构/主力动向\n13) 宏观/政策\n14) 资金成本/利率\n15) 外部联动\n\n输出内容必须包含：\n- 方向判断（偏多/偏空/震荡）\n- 预测区间\n- 概率分布（5种情景及概率）\n- 关键价位（支撑/压力）\n- 核心逻辑\n\nStep 6: 更新tracking文件\nexecute: 更新 `tracking/daily_prediction.json` 的 am_session.prediction 字段\n\nStep 7: 输出完整早盘预测报告\n以指定格式输出完整报告（含方向/区间/概率分布/关键价位）。\n\n【注意】报告已生成但未成功发送时，不要重复生成，直接报告「上次任务已完成但未推送」即可。\n\n---执行步骤---"
       },
       "delivery": {
         "mode": "announce",
@@ -26,14 +26,15 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776734100000,
-        "lastRunAtMs": 1776647700012,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 418700,
-        "lastDelivered": true,
+        "nextRunAtMs": 1777252500000,
+        "lastRunAtMs": 1776993300007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 34853,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "当前服务集群负载较高，请稍后重试，感谢您的耐心等待。 (2064)"
       }
     },
     {
@@ -43,7 +44,7 @@
       "name": "兆易创新午盘复盘+下午预测",
       "enabled": true,
       "createdAtMs": 1776136024789,
-      "updatedAtMs": 1776658646272,
+      "updatedAtMs": 1777004346832,
       "schedule": {
         "kind": "cron",
         "expr": "15 12 * * 1-5",
@@ -53,7 +54,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行兆易创新(603986)午盘复盘与下午预测任务：\n1) 首先执行 `bash ~/.openclaw/workspace/scripts/is_trading_day.sh` 检查今日是否为交易日，如非交易日则回复\"今日非A股交易日，跳过午盘复盘\"并结束任务；\n2) 读取 tracking/daily_prediction.json 的 am_session.prediction 内容；\n3) 通过腾讯财经API获取上午最新行情（开盘价、11:30收盘价、涨跌幅、成交量）；\n4) 对比早盘预测与实际走势，评估预测准确度；\n5) 生成午盘复盘报告（实际vs预测偏差分析）；\n6) 生成下午走势预测（含方向/区间/概率分布）；\n7) 更新 tracking/daily_prediction.json 的 am_session.review 和 pm_session.prediction。"
+        "message": "你是一名拥有15年从业经验的资深证券分析师。请严格按以下步骤执行兆易创新(603986)午盘复盘与下午预测任务。\n\n【重试策略】如果任务执行过程中遇到任何API错误(400/429/500等)、网络超时、或模型返回错误，立即执行以下重试流程：等待30秒后重试，共最多重试3次。3次全部失败后才报告任务失败。\n\n---执行步骤---\n\nStep 1: 检查是否为交易日\nexecute: `bash ~/.openclaw/workspace/scripts/is_trading_day.sh`\n如果返回非交易日，立即回复「今日非A股交易日，跳过午盘复盘」并结束任务。\n\nStep 2: 读取早盘预测\nexecute: 读取 `tracking/daily_prediction.json` 的 am_session.prediction 内容\n\n\nStep 3: 获取上午最新行情\nexecute: 通过腾讯财经API获取兆易创新(603986)上午行情（开盘价、11:30收盘价、涨跌幅、成交量）\n\nStep 4: 对比早盘预测与实际走势\nexecute: 评估早盘预测的准确度\n\nStep 5: 生成午盘复盘报告\n分析内容：\n- 实际走势 vs 预测偏差分析\n- 关键价位验证情况\n- 量能对比\n\nStep 6: 生成下午走势预测\n包含：方向/区间/概率分布/关键价位\n\nStep 7: 更新tracking文件\nexecute: 更新 `tracking/daily_prediction.json` 的 am_session.review 和 pm_session.prediction\n\nStep 8: 输出完整午盘复盘与下午预测报告\n以指定格式输出完整报告。\n\n【注意】报告已生成但未成功发送时，不要重复生成，直接报告「上次任务已完成但未推送」即可。\n\n---执行步骤---"
       },
       "delivery": {
         "mode": "announce",
@@ -61,14 +62,14 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776744900000,
-        "lastRunAtMs": 1776658500011,
+        "nextRunAtMs": 1777263300000,
+        "lastRunAtMs": 1777004100008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 146261,
-        "lastDelivered": true,
+        "lastDurationMs": 246824,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -78,7 +79,7 @@
       "name": "兆易创新尾盘复盘",
       "enabled": true,
       "createdAtMs": 1776136024809,
-      "updatedAtMs": 1776669779543,
+      "updatedAtMs": 1777015338208,
       "schedule": {
         "kind": "cron",
         "expr": "15 15 * * 1-5",
@@ -88,7 +89,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行兆易创新(603986)尾盘复盘任务：\n1) 首先执行 `bash ~/.openclaw/workspace/scripts/is_trading_day.sh` 检查今日是否为交易日，如非交易日则回复\"今日非A股交易日，跳过尾盘复盘\"并结束任务；\n2) 读取 tracking/daily_prediction.json 的 pm_session.prediction 内容；\n3) 通过腾讯财经API获取下午最新行情（15:00收盘价、涨跌幅、全日成交量）；\n4) 对比下午预测与实际走势，评估预测准确度；\n5) 生成尾盘复盘报告（含全天走势总结、准确率统计、经验教训）；\n6) 更新 tracking/daily_prediction.json 的 pm_session.review；\n7) 更新 tracking/daily_price.json 全日行情数据；\n8) 统计并更新 overall accuracy_rate；\n9) **【K线深度分析】通过腾讯财经API获取兆易创新近60个交易日的日K线数据（含日期/开盘/收盘/最高/最低/成交量）；分析内容：MACD指标（金叉/死叉/背离）、RSI指标（超买/超卖）、KDJ指标、均线系统（5/10/20/60日均线走势与排列）、支撑压力位（当日及历史关键价位）、成交量分析（放量/缩量对比）**；\n10) 将K线分析结果追加到当日复盘报告中输出。"
+        "message": "你是一名拥有15年从业经验的资深证券分析师。请严格按以下步骤执行兆易创新(603986)尾盘复盘任务。\n\n【重试策略】如果任务执行过程中遇到任何API错误(400/429/500等)、网络超时、或模型返回错误，立即执行以下重试流程：等待30秒后重试，共最多重试3次。3次全部失败后才报告任务失败。\n\n---执行步骤---\n\nStep 1: 检查是否为交易日\nexecute: `bash ~/.openclaw/workspace/scripts/is_trading_day.sh`\n如果返回非交易日，立即回复「今日非A股交易日，跳过尾盘复盘」并结束任务。\n\nStep 2: 读取下午预测\nexecute: 读取 `tracking/daily_prediction.json` 的 pm_session.prediction 内容\n\nStep 3: 获取下午最新行情\nexecute: 通过腾讯财经API获取兆易创新(603986)下午行情（15:00收盘价、涨跌幅、全日成交量）\n\nStep 4: 对比下午预测与实际走势\nexecute: 评估下午预测的准确度\n\nStep 5: 生成尾盘复盘报告\n分析内容：\n- 全天走势总结\n- 实际 vs 预测偏差分析\n- 关键价位验证\n- 准确率统计\n- 经验教训\n\nStep 6: 更新tracking文件\nexecute: 更新 `tracking/daily_prediction.json` 的 pm_session.review\n\nexecute: 更新 `tracking/daily_price.json` 全日行情数据\n\nexecute: 统计并更新 overall accuracy_rate\n\nStep 7: K线深度分析\nexecute: 通过腾讯财经API获取兆易创新近60个交易日日K线数据（含日期/开盘/收盘/最高/最低/成交量）\n分析内容：\n- MACD指标（金叉/死叉/背离）\n- RSI指标（超买/超卖）\n- KDJ指标\n- 均线系统（5/10/20/60日均线走势与排列）\n- 支撑压力位\n- 成交量分析（放量/缩量对比）\n\nStep 8: 输出完整尾盘复盘报告（含K线分析）\n以指定格式输出完整报告。\n\n【注意】报告已生成但未成功发送时，不要重复生成，直接报告「上次任务已完成但未推送」即可。\n\n---执行步骤---"
       },
       "delivery": {
         "mode": "announce",
@@ -96,14 +97,14 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776755700000,
-        "lastRunAtMs": 1776669300008,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 479535,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1777274100000,
+        "lastRunAtMs": 1777014900028,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 438180,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 3,
+        "lastError": "AxiosError: Request failed with status code 400"
       }
     },
     {
@@ -114,7 +115,7 @@
       "description": "每天A股收盘后(16:05)自动备份完整OpenClaw配置到GitHub(openclaw-root-backup)",
       "enabled": true,
       "createdAtMs": 1776271080529,
-      "updatedAtMs": 1776414022781,
+      "updatedAtMs": 1776932450225,
       "schedule": {
         "kind": "cron",
         "expr": "20 16 * * 1-5",
@@ -133,15 +134,15 @@
         "channel": "feishu"
       },
       "state": {
-        "nextRunAtMs": 1776673200000,
-        "lastRunAtMs": 1776414000010,
+        "nextRunAtMs": 1777018800000,
+        "lastRunAtMs": 1776932400010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 22771,
+        "lastDurationMs": 50215,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "runningAtMs": 1776673200005
+        "runningAtMs": 1777018800006
       }
     },
     {
@@ -151,7 +152,7 @@
       "name": "彩票预测号码生成",
       "enabled": true,
       "createdAtMs": 1776616300858,
-      "updatedAtMs": 1776660835127,
+      "updatedAtMs": 1776832491832,
       "schedule": {
         "kind": "cron",
         "expr": "30 12 * * 1,3,6",
@@ -161,8 +162,8 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行彩票预测号码生成任务，步骤如下：\n\nStep 1: 执行 `python3 ~/.openclaw/workspace/彩票/彩票预测.py`，记录完整输出\n\nStep 2: 直接将脚本输出中的\"大乐透：\"和\"双色球：\"两部分完整复制到飞书消息中（不改表格、不加emoji、不解释）\n\nStep 3: 将完整预测号码（脚本生成的6组大乐透+6组双色球）追加写入 ~/.openclaw/workspace/彩票/predict.md（格式与脚本输出一致）\n\n最后附上：\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
-        "timeoutSeconds": 180
+        "message": "执行彩票预测号码生成任务，步骤如下：\n\n【重试策略】如果任务执行过程中遇到任何API错误(400/429/500等)、网络超时、或模型返回错误，立即发飞书消息通知用户「彩票预测任务遇到错误，正在重试（第X次）」，等待30秒后重试，共最多重试3次。3次全部失败后发飞书消息告知用户「彩票预测任务失败，请手动检查」。\n\n---执行步骤记录---\n\nStep 1: 执行彩票预测脚本\n- 脚本位置：~/.openclaw/workspace/彩票/彩票预测.py\n- 执行命令：python3 ~/.openclaw/workspace/彩票/彩票预测.py\n- 记录完整输出\n\nStep 2: 输出预测号码\n- 直接将脚本输出中的「大乐透：」和「双色球：」两部分完整复制到飞书消息中（不改表格、不加emoji、不解释）\n\n【注意】脚本本身已自动写入predict.md，定时任务只需输出号码，无需额外写入文件。\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "announce",
@@ -170,11 +171,11 @@
         "to": "ou_451d71ab5382024db03f3a5c37dcde02"
       },
       "state": {
-        "nextRunAtMs": 1776832200000,
-        "lastRunAtMs": 1776660799281,
+        "nextRunAtMs": 1777091400000,
+        "lastRunAtMs": 1776832456635,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 35846,
+        "lastDurationMs": 35197,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -187,18 +188,18 @@
       "name": "大乐透开奖结果核对",
       "enabled": true,
       "createdAtMs": 1776617356574,
-      "updatedAtMs": 1776617363527,
+      "updatedAtMs": 1776866770285,
       "schedule": {
         "kind": "cron",
-        "expr": "30 21 * * 1,3,6",
+        "expr": "0 22 * * 1,3,6",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行大乐透开奖结果核对任务，每步都要输出状态：\n\n---执行步骤记录---\n\nStep 1: 搜索最新大乐透开奖号码\n- 通过搜索获取今日（最新一期）大乐透开奖结果\n- 搜索关键词：大乐透开奖结果 今日\n- 记录期号、开奖日期、开奖号码\n- 确认数据来源可靠\n\nStep 2: 更新大乐透.csv\n- 检查最新期号是否已在CSV中\n- 如果没有则追加新期号\n- 报告更新结果\n\nStep 3: 读取predict.md获取大乐透预测数据\n- 解析predict.md中的大乐透预测号码（6组）\n- 检查是否存在下注记录（用户是否实际购买）\n- 报告解析到的预测号码\n\nStep 4: 计算中奖金额\n- 如果有下注记录：使用下注记录计算中奖\n- 如果无下注记录：计算预测号码中奖情况\n- 输出每组号码的中奖结果\n- 更新累计统计（总投入、总中奖、收益率）\n\nStep 5: 输出最终结果\n- 包含：期号、开奖号码、各组预测号码中奖情况、累计统计\n- 格式清晰，便于阅读\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
-        "timeoutSeconds": 180
+        "message": "执行大乐透开奖结果核对任务，每步都要输出状态：\n【核心策略】多源fetch + 时间校验 + 期号校验 + 所有来源一致才确认 + 重试发消息通知。\n\n---执行步骤记录---\n\nStep 1: 确定当前期号\n根据大乐透开奖日规律（周一/三/六 21:15开奖），推算当期期号。\n\nStep 2: 多源同时fetch\n同时从以下所有来源获取大乐透开奖数据：\n- 来源A：https://m.55125.cn/kaijiang/dlt/（彩吧网）\n- 来源B：https://m.78500.cn/dlt/（78500彩票网）\n- 来源C：中彩网搜索「大乐透 第[期号]期 开奖结果 2026」\n每个来源fetch后记录：期号，开奖号码（前区×5 + 后区×2），页面时间。\n\nStep 3: 时间校验\n仅接受发布时间在开奖时间 21:15 之后的数据。21:15之前发布的直接丢弃。\n\nStep 4: 期号校验\nfetch到的期号必须与Step 1推算期号一致，不一致的数据丢弃。\n\nStep 5: 多源一致性验证\n【关键规则】所有已通过的来源（至少2个），其开奖号码必须完全一致：\n- 一致 → 数据可信，进入Step 6\n- 不一致 → 立即发飞书通知用户「大乐透多源不一致，等待重试」，等5分钟后重新fetch所有来源（最多3次）。每次重试前发飞书通知进度。\n\nStep 6: 更新大乐透.csv\n文件：~/.openclaw/workspace/彩票/大乐透.csv，检查最新期号，不重复追加。\n\nStep 7: 调用奖金计算脚本\n用大乐透奖金计算.py逐注计算：\n命令示例：python3 ~/.openclaw/workspace/彩票/大乐透奖金计算.py \"前区投注 + 后区投注\" \"前区开奖 + 后区开奖\"\n对每一注调用脚本，将结果汇总。\n\nStep 8: 更新stats.json\n文件：~/.openclaw/workspace/彩票/stats.json，读取当前值，累加本次投入和中奖，更新后写回。\n\nStep 9: 更新predict.md\n文件：~/.openclaw/workspace/彩票/predict.md，读取[已购]记录，将新期追加为[已开奖]状态，逐注列出中奖结果。\n\nStep 10: 输出最终结果\n飞书输出：期号、各来源校验情况、开奖号码、脚本计算结果（逐注中奖情况）、累计统计。\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "announce",
@@ -206,7 +207,14 @@
         "to": "ou_451d71ab5382024db03f3a5c37dcde02"
       },
       "state": {
-        "nextRunAtMs": 1776691800000
+        "nextRunAtMs": 1777125600000,
+        "lastRunAtMs": 1776866400010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 370275,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -216,18 +224,18 @@
       "name": "双色球开奖结果核对",
       "enabled": true,
       "createdAtMs": 1776617632135,
-      "updatedAtMs": 1776617632135,
+      "updatedAtMs": 1776953540516,
       "schedule": {
         "kind": "cron",
-        "expr": "20 21 * * 0,2,4",
+        "expr": "0 22 * * 0,2,4",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行双色球开奖结果核对任务，每步都要输出状态：\n\n---执行步骤记录---\n\nStep 1: 搜索最新双色球开奖号码\n- 通过搜索获取今日（最新一期）双色球开奖结果\n- 搜索关键词：双色球开奖结果 今日\n- 记录期号，开奖日期，开奖号码\n- 确认数据来源可靠\n\nStep 2: 更新双色球.csv\n- 检查最新期号是否已在CSV中\n- 如果没有则追加新期号\n- 报告更新结果\n\nStep 3: 读取predict.md获取双色球预测数据\n- 解析predict.md中的双色球预测号码（6组）\n- 检查是否存在下注记录（用户是否实际购买）\n- 报告解析到的预测号码\n\nStep 4: 计算中奖金额\n- 如果有下注记录：使用下注记录计算中奖\n- 如果无下注记录：计算预测号码中奖情况\n- 输出每组号码的中奖结果\n- 更新累计统计（总投入、总中奖、收益率）\n\nStep 5: 输出最终结果\n- 包含：期号，开奖号码、各组预测号码中奖情况、累计统计\n- 格式清晰，便于阅读\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
-        "timeoutSeconds": 180
+        "message": "执行双色球开奖结果核对任务，每步都要输出状态：\n【核心策略】多源fetch + 时间校验 + 期号校验 + 所有来源一致才确认 + 重试发消息通知。\n\n---执行步骤记录---\n\nStep 1: 确定当前期号\n根据双色球开奖日规律（周二/四/日 21:15开奖），推算当期期号。\n\nStep 2: 多源同时fetch\n同时从以下所有来源获取双色球开奖数据：\n- 来源A：https://m.55125.cn/kaijiang/ssq/（彩吧网）\n- 来源B：https://m.78500.cn/ssq/（78500彩票网）\n- 来源C：中彩网搜索「双色球 第[期号]期 开奖结果 2026」\n每个来源fetch后记录：期号，开奖号码（红球×6 + 蓝球×1），页面时间。\n\nStep 3: 时间校验\n仅接受发布时间在开奖时间 21:15 之后的数据。21:15之前发布的直接丢弃。\n\nStep 4: 期号校验\nfetch到的期号必须与Step 1推算期号一致，不一致的数据丢弃。\n\nStep 5: 多源一致性验证\n【关键规则】所有已通过的来源（至少2个），其开奖号码必须完全一致：\n- 一致 → 数据可信，进入Step 6\n- 不一致 → 立即发飞书通知用户「双色球多源不一致，等待重试」，等5分钟后重新fetch所有来源（最多3次）。每次重试前发飞书通知进度。\n\nStep 6: 更新双色球.csv\n文件：~/.openclaw/workspace/彩票/双色球.csv，检查最新期号，不重复追加。\n\nStep 7: 调用奖金计算脚本\n用双色球奖金计算.py逐注计算：\n命令示例：python3 ~/.openclaw/workspace/彩票/双色球奖金计算.py \"红球投注 + 蓝球\" \"红球开奖 + 蓝球开奖\"\n对每一注调用脚本，将结果汇总。\n\nStep 8: 更新stats.json\n文件：~/.openclaw/workspace/彩票/stats.json，读取当前值，累加本次投入和中奖，更新后写回。\n\n\nStep 9: 更新predict.md\n文件：~/.openclaw/workspace/彩票/predict.md，读取[已购]记录，将新期追加为[已开奖]状态，逐注列出中奖结果。\n\nStep 10: 输出最终结果\n飞书输出：期号、各来源校验情况、开奖号码、脚本计算结果（逐注中奖情况）、累计统计。\n\n---执行步骤记录---\n\n⚠️ 彩票是概率游戏，每一次开奖都是独立随机事件。历史数据≠未来趋势。理性购彩，量力而行。",
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "announce",
@@ -235,7 +243,14 @@
         "to": "ou_451d71ab5382024db03f3a5c37dcde02"
       },
       "state": {
-        "nextRunAtMs": 1776777600000
+        "nextRunAtMs": 1777212000000,
+        "lastRunAtMs": 1776953377702,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 162814,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     }
   ]

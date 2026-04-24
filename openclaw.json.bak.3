@@ -7,10 +7,11 @@
           "alias": "Minimax"
         },
         "minimax/MiniMax-M2.7-highspeed": {},
-        "custom-api-day77-icu/MiniMax-M2.7-highspeed": {}
+        "custom-api-day77-icu/MiniMax-M2.7-highspeed": {},
+        "custom-api-day77-icu-2/MiniMax-M2.7-highspeed": {}
       },
       "model": {
-        "primary": "custom-api-day77-icu/MiniMax-M2.7-highspeed"
+        "primary": "custom-api-day77-icu-2/MiniMax-M2.7-highspeed"
       }
     }
   },
@@ -103,6 +104,29 @@
             "reasoning": false
           }
         ]
+      },
+      "custom-api-day77-icu-2": {
+        "baseUrl": "https://api.day77.icu/v1",
+        "api": "openai-completions",
+        "apiKey": "sk-9kXabyooTbP01vkNdDMe5fE1XWGGqoSALmmBKUcwbE19teiq",
+        "models": [
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax-M2.7-highspeed (Custom Provider)",
+            "contextWindow": 16000,
+            "maxTokens": 4096,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "reasoning": false
+          }
+        ]
       }
     }
   },
@@ -165,7 +189,7 @@
     }
   },
   "meta": {
-    "lastTouchedVersion": "2026.4.12",
-    "lastTouchedAt": "2026-04-19T07:31:54.430Z"
+    "lastTouchedVersion": "2026.4.15",
+    "lastTouchedAt": "2026-04-19T07:49:48.352Z"
   }
 }
